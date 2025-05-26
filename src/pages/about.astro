@@ -21,10 +21,6 @@ const finished = false;
 const goal = 3;
 ---
 
-<a href="/">Home</a>
-<a href="/about">About</a>
-<a href="/blog">Blog</a>
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -32,9 +28,19 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+        <style>
+            h1 {
+                color: purple;
+            }
+        </style>
 	</head>
+
 	<body>
-		<h1>Hi, I'm {identity.name}</h1>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/blog">Blog</a>
+
+        <h1> Hi, I'm {identity.name} </h1>
         <p>Here are some things about me:</p>
         <ul>
             <li>I'm a {identity.occupation} living in {identity.country}.</li>
