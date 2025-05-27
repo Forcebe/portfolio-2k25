@@ -1,0 +1,8 @@
+---
+// A component to show a blog post in the list of posts on the blog page
+const { url, title } = Astro.props;
+---
+
+<li>
+  <a href={url}>{title}</a>
+</li>
