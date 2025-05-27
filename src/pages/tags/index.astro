@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
 const allPosts = Object.values(
   import.meta.glob("../posts/*.md", { eager: true })
 );
@@ -9,6 +8,18 @@ const tags = [
 ];
 const pageTitle = "Tag Index";
 ---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="tags">
+    {
+      tags.map((tag) => (
+        <p class="tag">
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </p>
+      ))
+    }
+  </div>
+</BaseLayout>
 
 <style>
   a {
@@ -29,15 +40,3 @@ const pageTitle = "Tag Index";
     background-color: #f8fcfd;
   }
 </style>
-
-<BaseLayout pageTitle={pageTitle}>
-  <div class="tags">
-    {
-      tags.map((tag) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </p>
-      ))
-    }
-  </div>
-</BaseLayout>
